@@ -1,11 +1,19 @@
-const express = require('express')
+import express from "express"
+import bodyParser from "body-parser"
+import usersRoutes from "./routes/users.js"
+
 const app = express()
-const port = 3000
+
+app.use(bodyParser.json())
+
+app.use('/users', usersRoutes)
+
+app.set('port', process.env.PORT || 5000)
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('New Backend structure')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`New Backend Strucure listening at http://localhost:${process.env.PORT}`)
 })
