@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 
 app.use('/users', usersRoutes)
 
-app.set('port', process.env.PORT || 5000)
+app.set('port', process.env.PORT || 5432)
 
 app.get('/', (req, res) => {
   res.send('New Backend structure')
